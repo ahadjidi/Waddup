@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'Waddup.urls'
+ROOT_URLCONF = 'WaddupSite1.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'Waddup.wsgi.application'
+WSGI_APPLICATION = 'WaddupSite1.wsgi.application'
 
 
 # Database
