@@ -1,16 +1,10 @@
 # Waddup
 HOW TO ACTIVATE VIRTUAL ENVIRONMENT:
-After CLONING this repository, you should see the approximately the following directory structure:
+After CLONING this repository in a new folder (call it Waddup, etc), you should see the approximately the following directory structure:
 
-<<<<<<< HEAD
 ├──Waddup
 
     └── WaddupSite1
-=======
-├──Waddup_App
-
-    └── Waddup
->>>>>>> 3db11f0 (fixed readme)
         └── blog
         └── static
         └── templates
@@ -29,7 +23,7 @@ After CLONING this repository, you should see the approximately the following di
     └── README.md
     └── requirements.txt
         
-   
+ Create a new project in your IDE and select the waddup folder as the project root.
 To activate the virtual environment:
      open Terminal/cmd and use the cd command to navigate into the Waddup directory, I'm a Mac user so in my case I ran the command "cd Desktop/Waddup" as the folder was located on my Desktop, but it may be different for you depending on where you placed it.
 
