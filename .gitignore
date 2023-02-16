@@ -1,0 +1,12 @@
+# gitignore for wadddup app. This file will tell your computer/git which files we do not want to put into the repository.
+# this may include the ds_store file (macOS file, its weird and useless)
+# venv/ directories - do not upload venv to git. be sure to avoid this
+# use requirements.txt to set up your own venv/ locally :)
+
+#If there are some files you want to ignore for just this repository, you can put them in .git/info/exclude.
+
+.DS_Store
+venv/
+dist/
+workspace.xml
+/shelf/
