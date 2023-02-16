@@ -3,6 +3,7 @@ HOW TO ACTIVATE VIRTUAL ENVIRONMENT:
 After downloading Waddup_App folder, you should see the approximately the following directory structure:
 
 ├──Waddup_App
+
     └── Waddup
         └── blog
         └── db.sqlite3
