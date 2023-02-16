@@ -8,7 +8,7 @@ class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     ## the (-) before -created_on signifies the latest post would be at 
     ## the top
-    template_name = 'index.html'
+    template_name = 'events.html'
 
 class PostDetail(generic.DetailView):
     model = Post
