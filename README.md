@@ -2,9 +2,15 @@
 HOW TO ACTIVATE VIRTUAL ENVIRONMENT:
 After CLONING this repository, you should see the approximately the following directory structure:
 
+<<<<<<< HEAD
 ├──Waddup
 
     └── WaddupSite1
+=======
+├──Waddup_App
+
+    └── Waddup
+>>>>>>> 3db11f0 (fixed readme)
         └── blog
         └── static
         └── templates
