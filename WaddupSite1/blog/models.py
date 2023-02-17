@@ -9,13 +9,6 @@ STATUS = (
     (1,"Publish")
 )
 
-TYPES = (
-    (0,"Party"),
-    (1,"Concert"),
-    (2,"Comedy Show"),
-    (3,"Other")
-)
-
 AGES = (
     (0, "18+"),
     (1, "21+"),
@@ -35,7 +28,23 @@ class Event(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     event_date_time = models.DateTimeField()
-    event_type = models.IntegerField(choices=TYPES, default=0)
+
+    PARTY = 'Party'
+    CONCERT = 'Concert'
+    COMEDY = 'Comedy Show'
+    OTHER = 'Other'
+    EVENT_TYPE_CHOICES = [
+        (PARTY, 'Party'),
+        (CONCERT, 'Concert'),
+        (COMEDY, 'Comedy Show'),
+        (OTHER, 'Other'),
+    ]
+    event_type = models.CharField(
+        max_length=15,
+        choices=EVENT_TYPE_CHOICES,
+        default=PARTY,
+    )
+
     updated_on = models.DateTimeField(auto_now=True)
     desc = models.TextField()
     event_price = models.IntegerField(default = 0)
@@ -48,7 +57,7 @@ class Event(models.Model):
 
 ## Sorts the results in event_date_time field in descending order 
 class Meta:
-    ordering = ['-event_date_time']
+    ordering = ['event_date_time']
 
 
 def __str__(self):

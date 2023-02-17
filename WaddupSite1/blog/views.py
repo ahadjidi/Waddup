@@ -15,7 +15,7 @@ class PostDetail(generic.DetailView):
     template_name = 'post_detail.html'
 
 class EventList(generic.ListView):
-    queryset = Event.objects.filter(status=1).order_by('-event_date_time')
+    queryset = Event.objects.filter(status=1).order_by('event_date_time')
     template_name = 'events.html'
 
 class EventDetail(generic.DetailView):

@@ -45,7 +45,7 @@
                     <h2 class="card-title">{{ event.title }}</h2>
                     <p class="card-text text-muted h6">{{ event.event_type }} | {{ event.event_date_time }} </p>
                     <p class="card-text">{{event.desc|slice:":200" }}</p>
-                    <a href="{% url 'event_detail' event.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                    <a href="{% url 'event_detail' event.slug  %}" class="btn btn-primary">View Event &rarr;</a>
                 </div>
             </div>
             {% endfor %}
