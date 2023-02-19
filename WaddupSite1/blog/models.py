@@ -53,6 +53,24 @@ class Event(models.Model):
     age = models.IntegerField(choices=AGES, default=0)
 
 
+class Friend(models.Model):
+    username = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
+    name = models.CharField(max_length=50)
+    REQUESTED = 'Requested'
+    ACCEPTED = 'Concert'
+    DENIED = 'Denied'
+    FRIEND_STATUS = [
+        (REQUESTED, 'Requested'),
+        (ACCEPTED, 'Accepted'),
+        (DENIED, 'Denied'), 
+    ]
+    status = models.CharField(
+        max_length=20,
+        choices=FRIEND_STATUS, 
+        default=REQUESTED
+        )
+    
 
 
 ## Sorts the results in event_date_time field in descending order 
