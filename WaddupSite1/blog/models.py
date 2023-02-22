@@ -71,6 +71,9 @@ class Friend(models.Model):
         default=REQUESTED
         )
     
+class Map(models.Model):
+    title = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=200, unique=True)
 
 
 ## Sorts the results in event_date_time field in descending order 

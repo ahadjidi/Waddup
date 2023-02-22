@@ -37,7 +37,7 @@ The last parameter, .venv, is the name of the directory to install the virtual e
 
 Once the command is finished, your virtual environment will be ready. Next, you can "activate" it by running the activation script.
 
-If you are on Windows, you will use .venv\Scripts\activate.bat.
+If you are on Windows, you will use \.venv\Scripts\Activate.ps1
 
 On other OSes, you will use source .venv/bin/activate.
 

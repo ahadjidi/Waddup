@@ -3,7 +3,7 @@ from django.views import generic
 from .models import Post
 from .models import Event
 from .models import Friend
-
+from .models import Map
 
 # Create your views here.
 class PostList(generic.ListView):
@@ -31,3 +31,8 @@ class FriendList(generic.ListView):
 class FriendDetail(generic.DetailView):
     model = Friend
     template_name = 'friend_detail.html'
+
+class MapView(generic.ListView):
+    model = Map
+    template_name = 'map.html'
+
