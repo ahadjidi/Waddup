@@ -31,3 +31,7 @@ class FriendList(generic.ListView):
 class FriendDetail(generic.DetailView):
     model = Friend
     template_name = 'friend_detail.html'
+
+class EventsPage(generic.ListView):
+    queryset = Event.objects.filter(status=1).order_by('event_date_time')
+    template_name = 'events_page.html'
