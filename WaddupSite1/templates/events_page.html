@@ -4,7 +4,47 @@
 -->
 
 {% block content %}
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
+        body {
+      font-family: "Lato", sans-serif;
+    }
+
+    .sidenav {
+      height: 100%;
+      width: 160px;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 20px;
+    }
+
+    .sidenav a {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .main {
+      margin-left: 160px; /* Same as the width of the sidenav */
+      font-size: 28px; /* Increased text to enable scrolling */
+      padding: 0px 10px;
+    }
+
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }
     body {
         font-family: "Roboto", sans-serif;
         font-size: 18px;
@@ -19,8 +59,17 @@
         box-shadow: 0 16px 48px #E3E7EB;
     }
 </style>
+</head>
+# Makes the sidebar
+<div class="sidenav">
+  <a href="{% url 'home' %}">Waddup</a>
+  <a href="#services">Filler</a>
+  <a href="#clients">Filler</a>
+  <a href="#contact">Filler</a>
+</div>
 
-<div class="container">
+<div class="main">
+  <div class="container">
     <div class="row">
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
@@ -38,6 +87,9 @@
         </div>
         <!-- Re insert sidebar block if needed-->
     </div>
+  </div>
 </div>
+
+
 {%endblock%}
 
