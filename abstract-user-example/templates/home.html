@@ -4,11 +4,15 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-  Welcome, {{ user.email }}!
-  <p><a href="{% url 'waddup_home' %}">Explore What's Happening Now...</a></p>
+  <head>
+    <meta http-equiv='refresh' content='0; URL={% url "waddup_home" %}'>
+  </head>
+  <!--Welcome, {{ user.email }}!
+   <p><a href="{% url 'waddup_home' %}">Explore What's Happening Now...</a></p> -->
 {% else %}
   <p>You are not logged in</p>
   <a href="{% url 'login' %}">Log In</a> |
   <a href="{% url 'signup' %}">Sign Up</a>
+  
 {% endif %}
 {% endblock %}

@@ -11,8 +11,10 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
-
+    
     objects = CustomUserManager()
+
+    FRIENDS_LIST = []
 
     def __str__(self):
         return self.email
