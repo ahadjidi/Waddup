@@ -4,21 +4,6 @@
 -->
 
 {% block content %}
-<style>
-    body {
-        font-family: "Roboto", sans-serif;
-        font-size: 18px;
-        background-color: #fdfdfd;
-    }
-
-    .head_text {
-        color: white;
-    }
-
-    .card {
-        box-shadow: 0 16px 48px #E3E7EB;
-    }
-</style>
 
 <header class="masthead">
     <div class="overlay"></div>
@@ -32,9 +17,12 @@
         </div>
     </div>
 </header>
+
 <form method="POST">
     {% csrf_token %}
-    {{form.as_p }}
-    <button href="{% url 'waddup_home' %}">Post Event</button>
+    {{ form.as_p }}
+
+    <button type = "submit" class = "btn btn-success">Post Event</button>
 </form>
+
 {%endblock%}
