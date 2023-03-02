@@ -21,3 +21,4 @@ class AddEventView(generic.CreateView):
     model = Event
     template_name = 'create.html'
     fields = '__all__'
+    fields = ('title', 'event_date_time', 'event_type', 'desc', 'event_price','age')
