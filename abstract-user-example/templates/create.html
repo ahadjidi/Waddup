@@ -32,12 +32,9 @@
         </div>
     </div>
 </header>
-<div class="container">
-    <div class="row">
-        <!-- Blog Entries Column -->
-        <div class="col-md-8 mt-3 left">
-        </div>
-        <!-- Re insert sidebar block if needed-->
-    </div>
-</div>
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p }}
+    <button href="{% url 'waddup_home' %}">Post Event</button>
+</form>
 {%endblock%}
