@@ -28,6 +28,9 @@ class AddEventView(generic.CreateView):
 class FriendList(generic.TemplateView):
     template_name = 'friends.html'
 
+class ProfileView(generic.TemplateView):
+    template_name = 'my_profile.html'
+
 class MapView(generic.TemplateView):
     template_name = 'map.html'
 

@@ -14,6 +14,7 @@ urlpatterns = [
     path('create/', views.AddEventView.as_view(), name = 'create_event'),
     path('map/', views.MapView.as_view(), name = 'map'),
     path('friends/', views.FriendList.as_view(), name = 'friends'),
+    path('my_profile/', views.ProfileView.as_view(), name = 'profile'),
 
     #path("signup/", views.SignUp.as_view(), name="signup"),
     ]
