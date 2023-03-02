@@ -31,7 +31,7 @@
             border-color: #dc281e;
         }
         .masthead {
-            background: #45a88e;
+            background: #5ad3db;
             height: auto;
             padding-bottom: 15px;
             box-shadow: 0 16px 48px #E3E7EB;
@@ -59,19 +59,22 @@
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'waddup_home' %}">Events</a>
                         </li>
+                             {% if user.is_authenticated %}
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'create_event' %}">Create Event</a>
                         </li>
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'friends' %}">Friends</a>
                         </li>
+                         {% endif %}
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'map' %}">Map</a>
                         </li>
+                          {% if user.is_authenticated %}
                         <li class="nav-item text-black">
                             <a class="nav-link text-black font-weight-bold" href="{% url 'profile' %}">My Profile</a>
                         </li>
-                        {% if user.is_authenticated %}
+
                             <li class="nav-item text-black">
                                 <a class="nav-link text-black font-weight-bold" href="{% url 'logout' %}">Logout</a>
                             </li>
@@ -79,7 +82,7 @@
                             <li class="nav-item text-black">
                                 <a class="nav-link text-black font-weight-bold" href="{% url 'login' %}">Login</a>
                             </li>
-                        {% endif %}
+                            {% endif %}
                     </ul>
                 </div>
             </div>
