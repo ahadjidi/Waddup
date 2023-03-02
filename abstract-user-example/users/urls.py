@@ -13,6 +13,7 @@ urlpatterns = [
     path('events/<slug:slug>/', views.EventDetail.as_view(), name = 'event_detail'),
     path('create/', views.AddEventView.as_view(), name = 'create_event'),
     path('map/', views.MapView.as_view(), name = 'map'),
+    path('friends/', views.FriendList.as_view(), name = 'friends'),
 
     #path("signup/", views.SignUp.as_view(), name="signup"),
     ]

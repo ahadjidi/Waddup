@@ -3,7 +3,8 @@ from django.views import generic
 from django.shortcuts import render
 
 from .forms import CustomUserCreationForm
-from .models import Event
+from .models import Event, CustomUser
+
 
 class SignUp(generic.CreateView):
     form_class = CustomUserCreationForm
@@ -23,6 +24,9 @@ class AddEventView(generic.CreateView):
     template_name = 'create.html'
     fields = '__all__'
     # fields = ('title', 'event_date_time', 'event_type', 'desc', 'event_price','age')
+
+class FriendList(generic.TemplateView):
+    template_name = 'friends.html'
 
 class MapView(generic.TemplateView):
     template_name = 'map.html'
