@@ -18,22 +18,18 @@
     </div>
 </header>
 <body>
-<div id='map' width="100%" style='height:400px'></div>
+<div id='map' width="100%" style='height:600px'></div>
    <script>
     mapboxgl.accessToken = 'pk.eyJ1IjoiamVoYW5kcmEiLCJhIjoiY2xlcWxpdjVvMGhqMDNycTZoZXhmM2doZSJ9.IHy3f_SdWkskZbX69q-YhA';
     var map = new mapboxgl.Map({
      container: 'map',
-     style: 'mapbox://styles/mapbox/streets-v10'
+     style: 'mapbox://styles/mapbox/streets-v10',
+     style: 'mapbox://styles/mapbox/streets-v10',
+     center: [-76.14, 43.04],
+     zoom: 13
+
     });
    </script>
 </body>
-<!--<div id='map' style='width: 400px; height: 300px;'></div>-->
-<!--<script>-->
-<!--  L.mapboxgl.accessToken = 'pk.eyJ1IjoiamVoYW5kcmEiLCJhIjoiY2xlcWxpdjVvMGhqMDNycTZoZXhmM2doZSJ9.IHy3f_SdWkskZbX69q-YhA';-->
-<!--var map = L.mapbox.map('map')-->
-<!--    .setView([40, -74.50], 9)-->
-<!--    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));-->
-<!--  });-->
-<!--</script>-->
 
 {%endblock%}
