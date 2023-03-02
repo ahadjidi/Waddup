@@ -1,5 +1,6 @@
 from django.urls import reverse_lazy
 from django.views import generic
+from django.shortcuts import render
 
 from .forms import CustomUserCreationForm
 from .models import Event
@@ -22,3 +23,16 @@ class AddEventView(generic.CreateView):
     template_name = 'create.html'
     fields = '__all__'
     # fields = ('title', 'event_date_time', 'event_type', 'desc', 'event_price','age')
+
+class MapView(generic.TemplateView):
+    template_name = 'map.html'
+
+def default_map(request):
+    # TODO: move this token to Django settings from an environment variable
+    #The Mapbox access token should really be stored in the Django settings file,
+    # so i left a "TODO" note to handle that as a future step.
+    # found in the Mapbox account settings and getting started instructions
+    # see https://www.mapbox.com/account/ under the "Access tokens" section
+    mapbox_access_token = 'pk.my_mapbox_access_token'
+    return render(request, '_base.html',
+                  { 'mapbox_access_token': mapbox_access_token })

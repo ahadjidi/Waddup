@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+<!-- Extends template tag tells Django to inherit from base.html template,
+    Then, we simply fill the contents blocks of base template with content
+-->
+
+{% block content %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Event Map </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+<div id='map' width="100%" style='height:400px'></div>
+   <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamVoYW5kcmEiLCJhIjoiY2xlcWxpdjVvMGhqMDNycTZoZXhmM2doZSJ9.IHy3f_SdWkskZbX69q-YhA';
+    var map = new mapboxgl.Map({
+     container: 'map',
+     style: 'mapbox://styles/mapbox/streets-v10'
+    });
+   </script>
+</body>
+<!--<div id='map' style='width: 400px; height: 300px;'></div>-->
+<!--<script>-->
+<!--  L.mapboxgl.accessToken = 'pk.eyJ1IjoiamVoYW5kcmEiLCJhIjoiY2xlcWxpdjVvMGhqMDNycTZoZXhmM2doZSJ9.IHy3f_SdWkskZbX69q-YhA';-->
+<!--var map = L.mapbox.map('map')-->
+<!--    .setView([40, -74.50], 9)-->
+<!--    .addLayer(L.mapbox.styleLayer('mapbox://styles/mapbox/streets-v11'));-->
+<!--  });-->
+<!--</script>-->
+
+{%endblock%}

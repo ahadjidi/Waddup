@@ -12,5 +12,7 @@ urlpatterns = [
     #path('logout/', views.EventList.as_view(),name='waddup_home'),
     path('events/<slug:slug>/', views.EventDetail.as_view(), name = 'event_detail'),
     path('create/', views.AddEventView.as_view(), name = 'create_event'),
+    path('map/', views.MapView.as_view(), name = 'map'),
+
     #path("signup/", views.SignUp.as_view(), name="signup"),
     ]
