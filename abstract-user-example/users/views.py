@@ -16,3 +16,8 @@ class EventList(generic.ListView):
 class EventDetail(generic.DetailView):
     model = Event
     template_name = 'event_detail.html'
+
+class AddEventView(generic.CreateView):
+    model = Event
+    template_name = 'create.html'
+    fields = '__all__'
