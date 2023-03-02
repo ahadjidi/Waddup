@@ -39,6 +39,8 @@
         <!-- Blog Entries Column -->
         <div class="col-md-8 mt-3 left">
             {% for event in event_list %}
+
+            <li>
             <!-- Note that we can use a for loop to iterate through each event and display!-->
             <div class="card mb-4">
                 <div class="card-body">
@@ -48,6 +50,7 @@
                     <a href="{% url 'event_detail' event.slug  %}" class="btn btn-primary">View Event &rarr;</a>
                 </div>
             </div>
+            </li>
             {% endfor %}
         </div>
         <!-- Re insert sidebar block if needed-->

@@ -58,8 +58,8 @@ class Event(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     age = models.IntegerField(choices=AGES, default=0)
 
-class Meta:
-    ordering = ['event_date_time']
+    class Meta:
+        ordering = ('event_date_time',)
 
 
 def __str__(self):
