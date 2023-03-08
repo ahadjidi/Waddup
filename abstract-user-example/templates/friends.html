@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+<!-- Extends template tag tells Django to inherit from base.html template,
+    Then, we simply fill the contents blocks of base template with content
+-->
+
+{% block content %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Friends </h3>
+                    <p class="text-light">Scroll to view more --> &nbsp
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <!-- Blog Entries Column -->
+        <!-- New buttons to lead to respective new pages.. -->
+        <div class="col-md-8 mt-3 left">
+            <a class="nav-link text-black font-weight-bold" href="{% url 'friend_requests' %}">
+                <button type = "submit" class = "btn btn-success">View Requests</button>
+            </a>
+            
+            <a class="nav-link text-black font-weight-bold" href="{% url 'sent_requests' %}">
+            <button type = "submit" class = "btn btn-success">View Sent Requests</button>
+            </a>
+            
+        </div>
+        <!-- Re insert sidebar block if needed-->
+    </div>
+</div>
+{%endblock%}

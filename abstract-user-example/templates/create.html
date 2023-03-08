@@ -1,0 +1,29 @@
+{% extends "_base.html" %}
+<!-- Extends template tag tells Django to inherit from base.html template,
+    Then, we simply fill the contents blocks of base template with content
+-->
+
+{% block content %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Create An Event </h3>
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Event Date and Time in format: yyyy-mm-dd hh:mm:ss</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type = "submit" class = "btn btn-success">Post Event</button>
+</form>
+
+{%endblock%}
