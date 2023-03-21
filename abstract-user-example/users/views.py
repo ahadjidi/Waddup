@@ -34,6 +34,11 @@ class ProfileView(generic.TemplateView):
 class MapView(generic.TemplateView):
     template_name = 'map.html'
 
+
+
+
+
+
 def default_map(request):
     # TODO: move this token to Django settings from an environment variable
     #The Mapbox access token should really be stored in the Django settings file,

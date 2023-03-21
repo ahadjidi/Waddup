@@ -15,6 +15,9 @@ urlpatterns = [
     path('map/', views.MapView.as_view(), name = 'map'),
     path('friends/', views.FriendList.as_view(), name = 'friends'),
     path('my_profile/', views.ProfileView.as_view(), name = 'profile'),
+    #path('searchfriends', views.searchfriends, name='friend_search' )
+    path('friends/',views.ProfileView.as_view(), name = 'searchbar')
+
 
     #path("signup/", views.SignUp.as_view(), name="signup"),
     ]
