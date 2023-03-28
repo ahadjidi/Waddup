@@ -12,3 +12,4 @@ workspace.xml
 /shelf/
 **/__pycache__
 .venv
+.idea
