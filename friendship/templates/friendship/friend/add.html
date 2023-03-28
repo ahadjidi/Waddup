@@ -1,0 +1,12 @@
+{% extends "_base.html" %}
+
+{% block content %}
+{% if not to_username == request.user.username %}
+{% if errors %}<p>{{ errors|join:", " }}</p>{% endif %}
+<form method="post">
+{% csrf_token %}
+<input type="hidden" name="to_username" value="{{ to_username }}" />
+<input type="submit" value="add {{ to_username }} as a friend" />
+</form>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "_base.html" %}
+<!-- Extends template tag tells Django to inherit from base.html template,
+    Then, we simply fill the contents blocks of base template with content
+-->
+
+{% block content %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Event Map </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+<div id='map' width="100%" style='height:500px'></div>
+   <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamVoYW5kcmEiLCJhIjoiY2xlcWxpdjVvMGhqMDNycTZoZXhmM2doZSJ9.IHy3f_SdWkskZbX69q-YhA';
+    var map = new mapboxgl.Map({
+     container: 'map',
+     style: 'mapbox://styles/mapbox/streets-v10',
+     style: 'mapbox://styles/mapbox/streets-v10',
+     center: [-76.14, 43.04],
+     zoom: 13
+
+    });
+   </script>
+</body>
+
+{%endblock%}

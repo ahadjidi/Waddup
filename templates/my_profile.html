@@ -1,0 +1,34 @@
+{% extends "_base.html" %}
+<!-- Extends template tag tells Django to inherit from base.html template,
+    Then, we simply fill the contents blocks of base template with content
+-->
+
+{% block content %}
+{% load friendshiptags %}
+
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> My Profile </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 card mb-4  mt-3 left  top">
+        <div class="card-body">
+          <p class = "card-text">Username: {{ user.username }}</p>
+          <p class = "card-text">Email: {{ user.email }}</p>
+          <p class = "card-text">Bio: {{ user.bio }}</p>
+          <a href="{% url 'friendship_view_friends' user.username %}">View friends</a>
+        </div>
+      </div>
+    </div>
+  </div>
+{%endblock%}
