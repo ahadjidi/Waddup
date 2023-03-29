@@ -16,5 +16,7 @@ urlpatterns = [
     path('my_profile/', views.ProfileView.as_view(), name = 'profile'),
     #path('searchfriends', views.searchfriends, name='friend_search' )
     path('friends/',views.ProfileView.as_view(), name = 'searchbar'),
+    path('events/<slug:slug>/edit', views.UpdateEventView.as_view(), name = 'update_event'),
+    path('events/<slug:slug>/delete', views.DeleteEventView.as_view(), name = 'delete_event'),
     #path("signup/", views.SignUp.as_view(), name="signup"),
     ]

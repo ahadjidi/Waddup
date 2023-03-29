@@ -1,0 +1,24 @@
+{% extends '_base.html' %}
+
+
+{% block content %}
+<header class="masthead">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class=" col-md-8 col-md-10 mx-auto">
+                <div class="site-heading">
+                    <h3 class=" site-heading my-4 mt-3 text-white"> Delete Event </h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+</br>
+<h3>Delete: {{ event.title }}</h3>
+<form method="post">
+  {% csrf_token %}
+  <strong>Are you sure?</strong></br>
+  <button type="submit">Delete Event</button>
+</form>
+{% endblock %}

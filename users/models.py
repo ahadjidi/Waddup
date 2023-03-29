@@ -4,7 +4,7 @@ from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.conf import settings
-
+from django.utils.text import slugify
 
 class CustomUser(AbstractUser):
     pass
@@ -46,15 +46,23 @@ class Event(models.Model):
         default=PARTY,
     )
     updated_on = models.DateTimeField(auto_now=True)
-    desc = models.TextField()
+    desc = models.TextField(default = 'No description has been provided for this event yet.')
     event_price = models.IntegerField(default = 0)
     created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
+    status = models.IntegerField(choices=STATUS, default=1)
     age = models.IntegerField(choices=AGES, default=0)
+    author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default = 1)
 
     def get_absolute_url(self):
         return reverse('waddup_home')
-    class Meta:
-        ordering = ('event_date_time',)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
     def __str__(self):
         return self.title
+    
+    class Meta:
+        ordering = ('event_date_time',)   

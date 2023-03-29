@@ -3,7 +3,7 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, redirect, render
 from django.conf import settings
 
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, CreateEventForm, EditForm
 from .models import Event, CustomUser
 
 try:
@@ -33,9 +33,25 @@ class EventDetail(generic.DetailView):
     template_name = 'event_detail.html'
 
 class AddEventView(generic.CreateView):
+    form_class = CreateEventForm
+    template_name = 'create_event.html'
+
+class UpdateEventView(generic.UpdateView):
     model = Event
-    template_name = 'create.html'
-    fields = '__all__'
+    form_class = EditForm
+    template_name = "update_event.html"
+    # fields = ('title', 'event_date_time', 'event_type', 'desc', 'event_price','age')
+
+class DeleteEventView(generic.DeleteView):
+    model = Event
+    template_name = "delete_event.html"
+    success_url = reverse_lazy('waddup_home')
+
+
+# class AddEventView(generic.CreateView):
+#     model = Event
+#     template_name = 'create.html'
+#     fields = '__all__'
     # fields = ('title', 'event_date_time', 'event_type', 'desc', 'event_price','age')
 
 class FriendList(generic.TemplateView):
