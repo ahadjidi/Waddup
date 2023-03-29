@@ -285,7 +285,7 @@ class FriendshipManager(models.Manager):
             raise ValidationError("Users cannot be friends with themselves")
 
         if self.are_friends(from_user, to_user):
-            raise AlreadyFriendsError("Users are already friends")
+            raise AlreadyExistsError("You are already friends with this user")
 
         if FriendshipRequest.objects.filter(
             from_user=from_user, to_user=to_user
