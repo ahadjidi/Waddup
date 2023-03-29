@@ -1,13 +1,58 @@
 {% extends "_base.html" %}
 
 {% block content %}
+
+
+
+<b>Friends</b> 
+
+<br>
+
+<a href="{% url 'friendship_view_friends' user.username %}"> View Your Friends </a>
+
+<br>
+
+
+
+<a href="{% url 'friendship_request_list' %}"> View Your Friend Requests </a>
+<br>
+
+<a href="{% url 'friendship_requests_rejected' %}"> View Your Rejected Requests </a>
+<br>
+<br>
+<br>
+
+<b>Followers</b>
+
+<br>
+
+<a href="{% url 'friendship_followers' user.username %}"> View Your Followers </a>
+<br>
+<a href="{% url 'friendship_following' user.username %}"> View Your Following </a>
+<br>
+<br>
+<br>
+
 <ul>
-{% for list_user in users %}
-    <li>
-        {% if user %}
-            {{ list_user.username }} | <a href="{% url 'friendship_add_friend' list_user.username %}">add as friend</a> | <a href="{% url 'follower_add' list_user.username %}">follow user</a>
+    <b>Reccomended:</b>
+    {% for list_user in users %}
+        <li>
+            {% if user %}
+                {{ list_user.username }} | <a href="{% url 'friendship_add_friend' list_user.username %}">add as friend</a> |
+                <a href="{% url 'follower_add' list_user.username %}">follow user</a>
+
         {% endif %}
     </li>
 {% endfor %}
+
+<br><br>
+
+
+
+
+
+
+
+
 </ul>
 {% endblock %}

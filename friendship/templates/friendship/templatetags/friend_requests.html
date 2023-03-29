@@ -1,4 +1,8 @@
 <ul>
+
+    <a href="{% url 'friendship_view_users'%}"> Return </a>
+    <br>
+
     {% for friend_request in friend_requests %}
         <li>{{ friend_request }}</li>
     {% endfor %}

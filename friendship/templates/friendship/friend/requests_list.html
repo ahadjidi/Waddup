@@ -2,6 +2,9 @@
 
 {% block content %}
 
+<a href="{% url 'friendship_view_users'%}"> Return </a>
+<br>
+
 <ul>
 {% for friendship_request in requests %}
     <li>{{ friendship_request.from_user }} to {{ friendship_request.to_user }} <a href="{% url 'friendship_requests_detail' friendship_request.id %}">view</a></li>

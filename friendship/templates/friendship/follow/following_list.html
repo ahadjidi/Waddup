@@ -1,4 +1,8 @@
 {% block content %}
+
+<a href="{% url 'friendship_view_users'%}"> Return </a>
+<br>
+
 {% load friendshiptags %}
 <h1>Following</h1>
 {% get_by_name friendship_context_object_name as var %}
