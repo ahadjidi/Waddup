@@ -2,6 +2,8 @@ from django.contrib import admin
 
 from .models import Block, Follow, Friend, FriendshipRequest
 
+# Allows admin to define blocked, following, friend, and friend request information
+# from /admin page based on given models and fields
 
 class BlockAdmin(admin.ModelAdmin):
     model = Block

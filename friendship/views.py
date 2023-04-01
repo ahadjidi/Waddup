@@ -14,6 +14,8 @@ except ImportError:
 
     user_model = User
 
+# Defines friendship page views, and renders approriate templates from templates
+# directory based on user/friend information
 
 def get_friendship_context_object_name():
     return getattr(settings, "FRIENDSHIP_CONTEXT_OBJECT_NAME", "user")

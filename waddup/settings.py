@@ -29,7 +29,8 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Here we also added necessary apps to utilize information / files there, namely
+# the users and friendship applications.
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -52,8 +53,10 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# Defines root url file to look at
 ROOT_URLCONF = 'waddup.urls'
 
+# Defines templates location / base directory to locate templates in
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -104,7 +107,8 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+# Redfine implicit user model to be CustomUser class, very important to do this
+# before initial migration to ensure that User class is customizable if desired
 AUTH_USER_MODEL = "users.CustomUser"
 
 # Internationalization
@@ -129,5 +133,6 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Defines login/logout redirect urls to be home page by default
 LOGIN_REDIRECT_URL = 'waddup_home'
 LOGOUT_REDIRECT_URL = 'waddup_home'

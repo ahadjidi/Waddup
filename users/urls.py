@@ -2,6 +2,9 @@ from django.urls import path, include
 from django.views.generic.base import TemplateView
 from . import views
 
+# Defines urls for most urls, also determines which view to use from views.py file
+# based on the given url, also determines url name to be used in html
+# templates when generating urls
 urlpatterns = [
     #path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("", views.EventList.as_view(), name="waddup_home"),
