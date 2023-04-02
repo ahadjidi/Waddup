@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from django.conf import settings
 from django.utils.text import slugify
 
+# Defines customer user model we utilized in order to add bio information and 
+# login functionality.
 class CustomUser(AbstractUser):
     pass
     # add additional fields in here
@@ -19,11 +21,12 @@ STATUS = (
     (1,"Publish")
 )
 
-AGES = (
-    (0, "18+"),
-    (1, "21+"),
-    (2, "All ages welcome")
-)
+
+
+# Defines our event class to store event data in database, works similarly to a 
+# blog post in concept. Defines all necessary fields and options for certain 
+# fields as well as necessary functions such as slug (url) generation based
+# on the event title.
 
 class Event(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -34,6 +37,17 @@ class Event(models.Model):
     CONCERT = 'Concert'
     COMEDY = 'Comedy Show'
     OTHER = 'Other'
+
+    eighteen = "18+"
+    twentyone = "21+"
+    allwelcome = "All ages welcome"
+
+    AGES = (
+    (eighteen, "18+"),
+    (twentyone, "21+"),
+    (allwelcome, "All ages welcome")
+    )   
+
     EVENT_TYPE_CHOICES = [
         (PARTY, 'Party'),
         (CONCERT, 'Concert'),
@@ -50,7 +64,12 @@ class Event(models.Model):
     event_price = models.IntegerField(default = 0)
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=1)
-    age = models.IntegerField(choices=AGES, default=0)
+    age = models.CharField(
+        max_length=30,
+        choices=AGES, 
+        default=eighteen
+        )
+        
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE, default = 1)
 
     def get_absolute_url(self):
