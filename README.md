@@ -2,16 +2,14 @@
 HOW TO ACTIVATE VIRTUAL ENVIRONMENT:
 After CLONING this repository in a new folder (call it Waddup, etc), you should see the approximately the following directory structure:
 
-├──Waddup
-
-    └── WaddupSite1
-        └── blog
-        └── static
+    └── Waddup
+        └── friendship
+        └── users
         └── templates
             └── base.html
             └── event_detail.html
             └── index.html
-        └── WaddupSite1
+        └── waddup
             └── __init__.py
             └── asgi.py
             └── settings.py
@@ -19,9 +17,9 @@ After CLONING this repository in a new folder (call it Waddup, etc), you should 
             └── wsgi.py
         └── db.sqlite3
         └── manage.py
-    └── .gitignore
-    └── README.md
-    └── requirements.txt
+    	└── .gitignore
+    	└── README.md
+    	└── requirements.txt
         
  Create a new project in your IDE and select the waddup folder as the project root.
 To activate the virtual environment:
@@ -29,7 +27,7 @@ To activate the virtual environment:
 
 ***make sure you have pip installed***
 
-To create your virtual environment, go into your project and run:
+To create your virtual environment, use cd to go into your project directory and run the following command once inside of the Waddup directory:
 
 python -m venv .venv
 
@@ -37,9 +35,9 @@ The last parameter, .venv, is the name of the directory to install the virtual e
 
 Once the command is finished, your virtual environment will be ready. Next, you can "activate" it by running the activation script.
 
-If you are on Windows, you will use .venv\Scripts\activate.bat.
+If you are on Windows, you will use ".venv\Scripts\activate.bat"
 
-On other OSes, you will use source .venv/bin/activate.
+On other OSes, you will use "source .venv/bin/activate"
 
 Once activated, you will see the name of the environment within the terminal.
 Intially, my command prompt said:
@@ -48,17 +46,18 @@ Intially, my command prompt said:
 
 But after running the "source venv/bin/activate" command, it changes to:
 
-    (waddup_env) spencerbradkin@Spencers-MBP Waddup %
+    (venv) spencerbradkin@Spencers-MBP Waddup %
 
 This means I have successfully activated the Waddup environment.
 
 IMPORTANT: to set up the enviromnent with required Waddup packages, run:
+
 pip install -r requirements.txt
 
 Now you will have all the correct versions of packages that we are using. No need to manually download plugins.
 
 
-exit venv at any time by typing deactivate into the cli
+exit venv at any time by typing deactivate into the command line.
 
 
 
@@ -80,7 +79,7 @@ System check identified no issues (0 silenced).
 
 February 16, 2023 - 16:38:01
 
-Django version 4.1.7, using settings 'WaddupSite1.settings'
+Django version 4.1.7, using settings 'Waddup.settings'
 
 Starting development server at http://127.0.0.1:8000/
 
@@ -108,7 +107,11 @@ Which will bring you to a site with a couple of sections, one being titled "Auth
 I have added the following login information to the system already which should work for everyone:
 
 Username:Waddup
-Password:CIS454Mohan
+Password:1234
+
+However, you can also use the following command to enter your own information an create an admin user:
+
+python3 manage.py createsuperuser
 
 To add an event, simply click the add link in the event subsection, fill in event details, and then the event should be displayed on the home page once you return.  It should also be visible with selected metadata regarding the event being displayed (we can choose this metadata).
 
@@ -117,7 +120,7 @@ To add an event, simply click the add link in the event subsection, fill in even
 go to terminal, ctrl^c for mac, windows may be similar. check and let someone know if not. 
 generally, use whatever you use to kill a process
 
-NOTES ABOUT THE ACTUAL FILES:
+NOTES ABOUT THE ACTUAL FILES FOR DEVELOPMENT:
 If you want to:
 
 	ADD ATTRIBUTES TO EVENT CLASS:
@@ -140,7 +143,7 @@ If you want to:
 
 	ADD MORE URLS:
 		When a new page is added, there must be a new URL added to the urls.py folder inside 
-		of the ../blog/urls.py file.  Comments in this file should show an example of how to format url added, REMBER THAT HIS 
+		of the ../blog/urls.py file.  Comments in this file should show an example of how to format url added
 	
 		
 
