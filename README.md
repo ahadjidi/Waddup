@@ -4,26 +4,35 @@ After CLONING this repository in a new folder (call it Waddup, etc), you should 
 
     └── Waddup
         └── friendship
+	    └── templates
+	    └── models.py
+	    └── urls.py
+	    ...
         └── users
+	    └── admin.py
+	    └── views.py
+	    └── urls.py
+	    ...
         └── templates
             └── base.html
             └── event_detail.html
             └── index.html
+	    ...
         └── waddup
             └── __init__.py
             └── asgi.py
             └── settings.py
-            └── urls.py
-            └── wsgi.py
+            ...
         └── db.sqlite3
         └── manage.py
     	└── .gitignore
     	└── README.md
     	└── requirements.txt
-        
- Create a new project in your IDE and select the waddup folder as the project root.
+NOTE: For that sake of keeping the diagram concise, not every file or directory is expanded or listed.  If approximately this directory tree is created, then it is likely that it cloned correctly.
+
+
 To activate the virtual environment:
-     open Terminal/cmd and use the cd command to navigate into the Waddup directory, I'm a Mac user so in my case I ran the command "cd Desktop/Waddup" as the folder was located on my Desktop, but it may be different for you depending on where you placed it.
+     open Terminal/cmd and use the cd command to navigate into the cloned Waddup directory, I'm a Mac user so in my case I ran the command "cd Desktop/Waddup" as the folder was located on my Desktop, but it may be different for you depending on where you placed it.
 
 ***make sure you have pip installed***
 
