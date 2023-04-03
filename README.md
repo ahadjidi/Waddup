@@ -98,7 +98,7 @@ Quit the server with CONTROL-C.
 Either click the blue http link, or:
 Go into your local browser and type the address given, in my case (and I think your's too) it is http://127.0.0.1:8000
 
-You should now see the home page. I am not sure if events that I create on my system are also displayed on your's, but if there is nothing then proceed to the next step to add events which is to login as an admin.
+You should now see the home page. I am not sure if events that I create on my system are also displayed on yours, but if there is nothing then proceed to the next step to add events which is to login as an admin.
 
 
 ***HOW TO RUN AS ADMIN:***
