@@ -73,7 +73,13 @@ exit venv at any time by typing deactivate into the command line.
 HOW TO RUN SERVER LOCALLY:
 ***you need to have your virtual env activated to do this***
 
-Once you have activated the Waddup virtual environment, you can now run the actual server. Django has a built in python file titled manage.py that is created when you create the actual Django application. So, while still inside of the WaddupSite1 directory, use the command "cd WaddupSite1" to enter the WaddupSite1 directory.  Inside of this directory lies the manage.py file as shown in the directory tree structure at the top of this file.  To run the server locally, simply use the command:
+Once you have activated the Waddup virtual environment, you can now run the actual server. Django has a built in python file titled manage.py that is created when you create the actual Django application.  Use the "cd Waddup" command to enter the Waddup directory, and once inside type "ls" to ensure that you are in the correct directory. The "ls" command should print the following:
+
+README.md		manage.py		users
+db.sqlite3		requirements.txt	waddup
+friendship		templates
+
+Inside of this directory lies the manage.py file as shown in the directory tree structure at the top of this file.  To run the server locally, simply use the command:
 
 python3 manage.py runserver
 
